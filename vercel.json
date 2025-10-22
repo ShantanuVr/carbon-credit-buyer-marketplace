@@ -1,0 +1,21 @@
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm dev",
+  "regions": ["iad1"],
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "NEXT_PUBLIC_REGISTRY_API_URL": "https://registry-api-demo.vercel.app",
+    "NEXT_PUBLIC_ADAPTER_API_URL": "https://adapter-api-demo.vercel.app", 
+    "NEXT_PUBLIC_EXPLORER_BASE_URL": "https://explorer-demo.vercel.app",
+    "NEXT_PUBLIC_BRAND_NAME": "Carbon Market (Demo)",
+    "COOKIE_NAME": "buyer_sess",
+    "COOKIE_SECURE": "true"
+  }
+}
