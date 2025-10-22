@@ -1,18 +1,30 @@
 # Carbon Credit Buyer Marketplace
 
+[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3-38B2AC)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 A demo marketplace application for carbon credit trading and retirement, built with Next.js 15, TypeScript, and TailwindCSS.
 
-## Features
+🌐 **Live Demo**: [https://carbon-credit-buyer-marketplace.vercel.app](https://carbon-credit-buyer-marketplace.vercel.app)  
+📖 **Documentation**: [View Documentation](https://github.com/ShantanuVr/carbon-credit-buyer-marketplace/wiki)  
+🐛 **Issues**: [Report Bug](https://github.com/ShantanuVr/carbon-credit-buyer-marketplace/issues)  
+✨ **Features**: [Request Feature](https://github.com/ShantanuVr/carbon-credit-buyer-marketplace/issues)
 
-- **Public Browse**: Browse available carbon credit projects and classes
-- **Buyer Dashboard**: Manage holdings, view recent activity, and track portfolio
-- **Shopping Cart**: Add credits to cart and manage quantities
-- **Checkout Process**: Complete purchases with registry integration
-- **Retirement Certificates**: Retire credits and generate certificates
-- **Dark Mode**: Toggle between light and dark themes
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
+## 🚀 Features
 
-## Tech Stack
+- **🌍 Public Browse**: Browse available carbon credit projects and classes
+- **👤 Buyer Dashboard**: Manage holdings, view recent activity, and track portfolio
+- **🛒 Shopping Cart**: Add credits to cart and manage quantities
+- **💳 Checkout Process**: Complete purchases with registry integration
+- **🏆 Retirement Certificates**: Retire credits and generate certificates
+- **🌙 Dark Mode**: Toggle between light and dark themes
+- **📱 Responsive Design**: Works on desktop, tablet, and mobile devices
+- **🔐 Secure Authentication**: HTTP-only cookies with CSRF protection
+- **🧪 Comprehensive Testing**: Unit and E2E tests included
+
+## 🛠 Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
@@ -22,8 +34,9 @@ A demo marketplace application for carbon credit trading and retirement, built w
 - **Authentication**: HTTP-only cookies with CSRF protection
 - **Icons**: Lucide React
 - **Testing**: Playwright (e2e) + Vitest (unit)
+- **Deployment**: Docker + Vercel ready
 
-## Getting Started
+## 🏃‍♂️ Quick Start
 
 ### Prerequisites
 
@@ -33,25 +46,29 @@ A demo marketplace application for carbon credit trading and retirement, built w
 
 ### Local Development
 
-1. **Clone and install dependencies:**
+1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
-   cd buyer-marketplace
+   git clone https://github.com/ShantanuVr/carbon-credit-buyer-marketplace.git
+   cd carbon-credit-buyer-marketplace
+   ```
+
+2. **Install dependencies:**
+   ```bash
    pnpm install
    ```
 
-2. **Set up environment variables:**
+3. **Set up environment variables:**
    ```bash
    cp .env.example .env.local
    # Edit .env.local with your configuration
    ```
 
-3. **Start the development server:**
+4. **Start the development server:**
    ```bash
    pnpm dev
    ```
 
-4. **Open your browser:**
+5. **Open your browser:**
    Navigate to [http://localhost:3004](http://localhost:3004)
 
 ### Docker Development
@@ -67,7 +84,14 @@ A demo marketplace application for carbon credit trading and retirement, built w
    pnpm dev
    ```
 
-## Project Structure
+## 🎯 Demo User
+
+For testing purposes, use these credentials:
+
+- **Email**: `buyer@buyerco.local`
+- **Password**: `Buyer@123`
+
+## 📁 Project Structure
 
 ```
 buyer-marketplace/
@@ -96,11 +120,14 @@ buyer-marketplace/
 │   ├── env.ts           # Environment validation
 │   ├── types.ts         # TypeScript types
 │   └── format.ts         # Formatting utilities
+├── tests/               # Test files
+│   ├── unit/            # Unit tests
+│   └── e2e/             # E2E tests
 └── styles/              # Global styles
     └── globals.css       # TailwindCSS imports
 ```
 
-## API Integration
+## 🔌 API Integration
 
 The application integrates with three main services:
 
@@ -119,54 +146,7 @@ The application integrates with three main services:
 - **Purpose**: Links to public explorer pages
 - **Access**: Read-only
 
-## Demo User
-
-For testing purposes, use these credentials:
-
-- **Email**: `buyer@buyerco.local`
-- **Password**: `Buyer@123`
-
-## Key Features
-
-### Public Browsing
-- View all active carbon credit projects
-- Filter by region, methodology, vintage
-- See available credits per class
-- Access project and class details
-
-### Buyer Dashboard
-- Overview of holdings and portfolio value
-- Recent activity and transactions
-- Quick actions for common tasks
-- Holdings table with retirement options
-
-### Shopping Cart
-- Add credits from class detail pages
-- Adjust quantities with validation
-- Remove items or clear entire cart
-- Proceed to secure checkout
-
-### Checkout Process
-- Review order items and totals
-- Complete purchase via registry API
-- Generate order confirmation
-- Transfer credits to buyer account
-
-### Retirement Certificates
-- Retire purchased credits
-- Generate permanent certificates
-- Track environmental impact
-- View retirement history
-
-## Security Features
-
-- **HTTP-only Cookies**: Secure authentication storage
-- **CSRF Protection**: Prevents cross-site request forgery
-- **Input Validation**: Zod schemas for all form inputs
-- **Role-based Access**: Buyer-only actions protected
-- **Hash Storage**: Sensitive data (purpose/beneficiary) stored as hashes
-
-## Testing
+## 🧪 Testing
 
 ### Unit Tests
 ```bash
@@ -178,7 +158,15 @@ pnpm test
 pnpm test:e2e
 ```
 
-## Deployment
+### Test Coverage
+```bash
+pnpm test:coverage
+```
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ShantanuVr/carbon-credit-buyer-marketplace)
 
 ### Docker Production
 ```bash
@@ -195,18 +183,50 @@ Ensure all required environment variables are set:
 - `COOKIE_NAME`
 - `COOKIE_SECURE`
 
-## Contributing
+## 🔒 Security Features
+
+- **HTTP-only Cookies**: Secure authentication storage
+- **CSRF Protection**: Prevents cross-site request forgery
+- **Input Validation**: Zod schemas for all form inputs
+- **Role-based Access**: Buyer-only actions protected
+- **Hash Storage**: Sensitive data (purpose/beneficiary) stored as hashes
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support
+## 🙏 Acknowledgments
 
-For questions or support, please open an issue in the repository or contact the development team.
+- [Next.js](https://nextjs.org/) for the amazing React framework
+- [TailwindCSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) for the beautiful component library
+- [Lucide](https://lucide.dev/) for the consistent icon set
+
+## 📞 Support
+
+- 📧 **Email**: [support@carbonmarketplace.com](mailto:support@carbonmarketplace.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/ShantanuVr/carbon-credit-buyer-marketplace/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/ShantanuVr/carbon-credit-buyer-marketplace/discussions)
+
+## 📊 Project Status
+
+![GitHub last commit](https://img.shields.io/github/last-commit/ShantanuVr/carbon-credit-buyer-marketplace)
+![GitHub issues](https://img.shields.io/github/issues/ShantanuVr/carbon-credit-buyer-marketplace)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/ShantanuVr/carbon-credit-buyer-marketplace)
+![GitHub stars](https://img.shields.io/github/stars/ShantanuVr/carbon-credit-buyer-marketplace)
+
+---
+
+<div align="center">
+  <strong>Built with ❤️ for Climate Action</strong>
+</div>
