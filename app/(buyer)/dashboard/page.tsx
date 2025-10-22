@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { RegistryClient } from '@/lib/api'
+import { createRegistryClient } from '@/lib/api'
 import { CreditBalance, Retirement } from '@/lib/types'
 import { formatNumber, formatDate } from '@/lib/format'
 import { Leaf, TrendingUp, Shield, ShoppingCart, Receipt, Activity } from 'lucide-react'
@@ -22,7 +23,7 @@ export default function BuyerDashboard() {
 
   const fetchDashboardData = async () => {
     try {
-      const registryClient = new RegistryClient()
+      const registryClient = createRegistryClient()
       const [balances, userData] = await Promise.all([
         registryClient.getCreditBalance(),
         fetch('/api/auth/me').then(res => res.ok ? res.json() : null),

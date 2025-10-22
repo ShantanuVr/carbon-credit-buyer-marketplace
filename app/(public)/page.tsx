@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { RegistryClient } from '@/lib/api'
+import { createRegistryClient } from '@/lib/api'
 import { Project, Class } from '@/lib/types'
 import { formatNumber } from '@/lib/format'
 import { Leaf, TrendingUp, Globe, Shield } from 'lucide-react'
@@ -14,7 +15,7 @@ interface ProjectWithClasses extends Project {
 
 async function getFeaturedProjects(): Promise<ProjectWithClasses[]> {
   try {
-    const registryClient = new RegistryClient()
+    const registryClient = createRegistryClient()
     const [projects, classes] = await Promise.all([
       registryClient.getProjects('ACTIVE'),
       registryClient.getClasses(true),

@@ -1,14 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { RegistryClient } from '@/lib/api'
 import { AuthLoginSchema } from '@/lib/types'
 import { setAuthCookie } from '@/lib/auth'
+import { createRegistryClient } from '@/lib/api'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     const { email, password } = AuthLoginSchema.parse(body)
 
-    const registryClient = new RegistryClient()
+    const registryClient = createRegistryClient()
     const response = await registryClient.login(email, password)
 
     // Set httpOnly cookie

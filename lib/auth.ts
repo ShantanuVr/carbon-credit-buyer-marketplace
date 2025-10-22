@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { env } from './env'
 import { AuthResponse } from './types'
+import { createRegistryClient } from './api'
 
 export async function getAuthToken(): Promise<string | null> {
   const cookieStore = await cookies()
@@ -27,6 +28,16 @@ export async function getCurrentUser(): Promise<AuthResponse['user'] | null> {
   if (!token) return null
 
   try {
+    if (env.DEMO_MODE) {
+      // In demo mode, return mock user if token exists
+      return {
+        id: 'user_001',
+        email: 'buyer@buyerco.local',
+        role: 'BUYER',
+        orgId: 'org_001',
+      }
+    }
+
     const response = await fetch(`${env.NEXT_PUBLIC_REGISTRY_API_URL}/auth/me`, {
       headers: {
         Authorization: `Bearer ${token}`,
