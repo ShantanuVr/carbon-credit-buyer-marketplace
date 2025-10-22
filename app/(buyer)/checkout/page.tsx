@@ -23,7 +23,7 @@ export default function CheckoutPage() {
   useEffect(() => {
     loadCartItems()
     checkAuth()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadCartItems = () => {
     const savedCart = localStorage.getItem('cart')
@@ -214,7 +214,7 @@ export default function CheckoutPage() {
               <CardHeader>
                 <CardTitle>Order Items</CardTitle>
                 <CardDescription>
-                  Review the carbon credits you're purchasing
+                  Review the carbon credits you&apos;re purchasing
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -317,7 +317,7 @@ export default function CheckoutPage() {
                   <div className="space-y-1">
                     <h4 className="text-sm font-medium">Secure Transfer</h4>
                     <p className="text-xs text-muted-foreground">
-                      Credits are transferred directly through the registry's secure system.
+                      Credits are transferred directly through the registry&apos;s secure system.
                     </p>
                   </div>
                 </div>

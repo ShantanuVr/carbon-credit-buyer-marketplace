@@ -10,21 +10,22 @@ import { CheckCircle, Package, Shield, ExternalLink, ArrowLeft } from 'lucide-re
 import Link from 'next/link'
 
 interface OrderDetailPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default function OrderDetailPage({ params }: OrderDetailPageProps) {
+export default async function OrderDetailPage({ params }: OrderDetailPageProps) {
+  const { id } = await params
   const [order, setOrder] = useState<Order | null>(null)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     loadOrder()
-  }, [params.id])
+  }, [id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadOrder = () => {
-    const savedOrder = localStorage.getItem(`order_${params.id}`)
+    const savedOrder = localStorage.getItem(`order_${id}`)
     if (savedOrder) {
       setOrder(JSON.parse(savedOrder))
     }

@@ -279,7 +279,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 </div>
                 <h3 className="text-lg font-medium">No classes available</h3>
                 <p className="text-muted-foreground mt-2">
-                  This project doesn't have any available credit classes at the moment.
+                  This project doesn&apos;t have any available credit classes at the moment.
                 </p>
               </div>
             )}

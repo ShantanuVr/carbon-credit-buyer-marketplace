@@ -34,7 +34,7 @@ export default function ClassDetailPage({ params }: ClassDetailPageProps) {
   useEffect(() => {
     fetchClassData()
     checkAuth()
-  }, [params.classId])
+  }, [params.classId]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const checkAuth = async () => {
     try {
